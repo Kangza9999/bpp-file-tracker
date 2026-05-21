@@ -1,257 +1,141 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
+<!-- =========================================
+อัปเกรดเฉพาะส่วนเพิ่มเข้าไปจากไฟล์เดิม
+โดย "ไม่เปลี่ยน Layout เดิม"
+========================================= -->
 
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- =========================================
+1. REPLACE HEADER CLASS
+========================================= -->
 
-<title>BPP Smart Workflow</title>
+<header class="
+bg-gradient-to-r
+from-[#102d1a]
+via-[#143f24]
+to-[#1b4d2d]
+text-white
+py-4
+px-6
+shadow-2xl
+border-b-[3px]
+border-[#c5a059]
+backdrop-blur-xl
+sticky
+top-0
+z-50
+">
 
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- =========================================
+2. REPLACE BODY BACKGROUND
+========================================= -->
 
-<!-- FontAwesome -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<body class="
+bg-gradient-to-b
+from-[#edf2ee]
+to-[#e6ece8]
+min-h-screen
+text-gray-800
+">
 
-<!-- QR -->
-<script src="https://unpkg.com/html5-qrcode"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-<!-- Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+<!-- =========================================
+3. เพิ่ม CSS นี้ใน <style>
+========================================= -->
 
 <style>
 
-:root{
-
-  --main:#143f24;
-  --main-dark:#0e2c19;
-  --gold:#c5a059;
-
-  --bg:#edf2ee;
-
-  --blue:#2563eb;
-  --green:#16a34a;
-  --red:#dc2626;
-  --orange:#ea580c;
-
-}
-
 *{
-
-  font-family:'Sarabun',sans-serif;
-
   transition:
   background .2s ease,
   box-shadow .2s ease,
   transform .15s ease;
-
 }
 
-body{
-
-  margin:0;
-  padding:0;
+.glass-card{
 
   background:
-  linear-gradient(
-    180deg,
-    #edf2ee 0%,
-    #e6ece8 100%
-  );
+  rgba(255,255,255,.92);
 
-  color:#111827;
-
-}
-
-/****************************************
- HEADER
-****************************************/
-
-header{
-
-  background:
-  linear-gradient(
-    135deg,
-    var(--main-dark),
-    var(--main),
-    #1d5734
-  );
-
-  color:white;
-
-  padding:18px 20px;
-
-  border-bottom:
-  3px solid var(--gold);
-
-  box-shadow:
-  0 8px 24px rgba(0,0,0,.18);
-
-  position:sticky;
-  top:0;
-  z-index:100;
-
-  backdrop-filter:blur(10px);
-
-}
-
-.header-wrap{
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-}
-
-.logo-wrap{
-
-  display:flex;
-  align-items:center;
-  gap:14px;
-
-}
-
-.logo{
-
-  width:56px;
-  height:56px;
-
-  border-radius:18px;
-
-  background:
-  linear-gradient(
-    135deg,
-    #d8bb74,
-    var(--gold)
-  );
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:black;
-
-  font-size:24px;
-
-  box-shadow:
-  0 8px 18px rgba(0,0,0,.25);
-
-}
-
-.header-title{
-
-  font-size:20px;
-  font-weight:700;
-
-}
-
-.header-sub{
-
-  font-size:12px;
-  opacity:.85;
-
-  margin-top:3px;
-
-}
-
-.online-badge{
-
-  font-size:12px;
-
-  background:
-  rgba(16,185,129,.15);
+  backdrop-filter:
+  blur(14px);
 
   border:
-  1px solid rgba(16,185,129,.25);
+  1px solid rgba(255,255,255,.45);
 
-  padding:7px 12px;
-
-  border-radius:999px;
-
-  color:#86efac;
-
-  backdrop-filter:blur(10px);
+  box-shadow:
+  0 10px 28px rgba(0,0,0,.06);
 
 }
 
-/****************************************
- MAIN
-****************************************/
+.glass-card:hover{
 
-main{
-
-  padding:16px;
-  padding-bottom:110px;
+  box-shadow:
+  0 16px 36px rgba(0,0,0,.10);
 
 }
 
-/****************************************
- CARD
-****************************************/
+.gold-glow{
 
-.card{
+  box-shadow:
+  0 0 0 1px rgba(197,160,89,.15),
+  0 8px 24px rgba(197,160,89,.18);
 
-  background:
-  rgba(255,255,255,.95);
+}
 
-  backdrop-filter:blur(14px);
+.soft-border{
 
   border:
-  1px solid rgba(255,255,255,.5);
+  1px solid rgba(255,255,255,.4);
 
-  border-radius:24px;
+}
+
+.nav-glass{
+
+  background:
+  rgba(255,255,255,.94);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid rgba(255,255,255,.45);
 
   box-shadow:
-  0 10px 30px rgba(0,0,0,.06);
-
-  padding:18px;
+  0 10px 36px rgba(0,0,0,.12);
 
 }
 
-.card:hover{
+.timeline-hover:hover{
+
+  background:#f8faf9;
+
+}
+
+.status-modern{
+
+  transition:.2s;
+
+}
+
+.status-modern:hover{
+
+  transform:
+  translateY(-2px);
 
   box-shadow:
-  0 16px 34px rgba(0,0,0,.09);
+  0 10px 22px rgba(0,0,0,.08);
 
 }
 
-/****************************************
- TAB
-****************************************/
+.status-modern:active{
 
-.tab{
-  display:none;
-}
-
-.tab.active{
-  display:block;
-}
-
-/****************************************
- STATS
-****************************************/
-
-.stats-grid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(2,1fr);
-
-  gap:14px;
+  transform:
+  scale(.98);
 
 }
 
-.stat-card{
+.qr-premium{
 
-  border-radius:22px;
-
-  padding:18px;
-
-  color:white;
+  border:
+  3px dashed #143f24;
 
   position:relative;
 
@@ -259,330 +143,7 @@ main{
 
 }
 
-.stat-card::after{
-
-  content:"";
-
-  position:absolute;
-
-  width:120px;
-  height:120px;
-
-  border-radius:50%;
-
-  background:
-  rgba(255,255,255,.12);
-
-  top:-40px;
-  right:-40px;
-
-}
-
-.stat-title{
-
-  font-size:13px;
-  opacity:.9;
-
-}
-
-.stat-value{
-
-  font-size:34px;
-  font-weight:700;
-
-  margin-top:8px;
-
-}
-
-.blue{
-
-  background:
-  linear-gradient(
-    135deg,
-    #2563eb,
-    #1d4ed8
-  );
-
-}
-
-.green{
-
-  background:
-  linear-gradient(
-    135deg,
-    #16a34a,
-    #15803d
-  );
-
-}
-
-.red{
-
-  background:
-  linear-gradient(
-    135deg,
-    #dc2626,
-    #b91c1c
-  );
-
-}
-
-.gold{
-
-  background:
-  linear-gradient(
-    135deg,
-    #c5a059,
-    #a87f2e
-  );
-
-}
-
-/****************************************
- INPUT
-****************************************/
-
-.input{
-
-  width:100%;
-
-  background:#f4f6f5;
-
-  border:none;
-
-  border-radius:18px;
-
-  padding:15px;
-
-  outline:none;
-
-  box-sizing:border-box;
-
-  font-size:15px;
-
-}
-
-.input:focus{
-
-  box-shadow:
-  0 0 0 3px rgba(20,63,36,.15);
-
-}
-
-/****************************************
- BUTTON
-****************************************/
-
-.main-btn{
-
-  width:100%;
-
-  border:none;
-
-  border-radius:20px;
-
-  padding:16px;
-
-  font-weight:700;
-
-  cursor:pointer;
-
-}
-
-.main-btn:active{
-  transform:scale(.98);
-}
-
-.btn-main{
-
-  background:
-  linear-gradient(
-    135deg,
-    var(--main),
-    var(--main-dark)
-  );
-
-  color:white;
-
-  box-shadow:
-  0 10px 24px rgba(20,63,36,.25);
-
-}
-
-.btn-main:hover{
-
-  filter:brightness(1.05);
-
-}
-
-/****************************************
- WORKFLOW
-****************************************/
-
-.workflow-btn{
-
-  width:100%;
-
-  border:none;
-
-  border-radius:22px;
-
-  padding:18px;
-
-  text-align:left;
-
-  cursor:pointer;
-
-  border:
-  1px solid rgba(255,255,255,.5);
-
-}
-
-.workflow-btn:hover{
-
-  transform:translateY(-2px);
-
-}
-
-.workflow-btn:active{
-
-  transform:scale(.98);
-
-}
-
-.workflow-title{
-
-  font-weight:700;
-
-}
-
-.workflow-sub{
-
-  font-size:12px;
-
-  opacity:.75;
-
-  margin-top:5px;
-
-}
-
-/****************************************
- TIMELINE
-****************************************/
-
-.timeline-item{
-
-  position:relative;
-
-  padding-left:28px;
-
-  margin-bottom:24px;
-
-}
-
-.timeline-item::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  top:6px;
-
-  width:14px;
-  height:14px;
-
-  border-radius:50%;
-
-  background:var(--main);
-
-  box-shadow:
-  0 0 0 4px rgba(20,63,36,.12);
-
-}
-
-.timeline-item::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:6px;
-  top:22px;
-
-  width:2px;
-  height:calc(100% + 8px);
-
-  background:#d1d5db;
-
-}
-
-.timeline-item:last-child::after{
-  display:none;
-}
-
-.timeline-id{
-
-  font-weight:700;
-
-}
-
-.timeline-status{
-
-  margin-top:4px;
-
-  font-size:14px;
-
-  color:#374151;
-
-}
-
-.timeline-time{
-
-  font-size:12px;
-
-  color:#6b7280;
-
-  margin-top:5px;
-
-}
-
-/****************************************
- SEARCH
-****************************************/
-
-.search{
-
-  width:100%;
-
-  border:none;
-
-  background:#f3f4f6;
-
-  border-radius:18px;
-
-  padding:14px 16px;
-
-  outline:none;
-
-}
-
-/****************************************
- QR
-****************************************/
-
-.qr-box{
-
-  border:
-  3px dashed var(--main);
-
-  position:relative;
-
-  overflow:hidden;
-
-}
-
-.qr-box::before{
+.qr-premium::before{
 
   content:"BPP";
 
@@ -601,664 +162,268 @@ main{
 
 }
 
-.qr-badge{
-
-  display:inline-block;
-
-  background:var(--main);
-
-  color:white;
-
-  padding:6px 14px;
-
-  border-radius:999px;
-
-  font-size:12px;
-
-}
-
-/****************************************
- BADGE
-****************************************/
-
-.badge{
-
-  display:inline-block;
-
-  padding:7px 14px;
-
-  border-radius:999px;
-
-  font-size:12px;
-
-  font-weight:700;
-
-}
-
-.badge-red{
-
-  background:#fee2e2;
-  color:#b91c1c;
-
-}
-
-.badge-blue{
-
-  background:#dbeafe;
-  color:#1d4ed8;
-
-}
-
-/****************************************
- NAVBAR
-****************************************/
-
-.bottom-nav{
-
-  position:fixed;
-
-  left:14px;
-  right:14px;
-  bottom:14px;
+.online-pill{
 
   background:
-  rgba(255,255,255,.95);
-
-  backdrop-filter:blur(16px);
+  rgba(16,185,129,.12);
 
   border:
-  1px solid rgba(255,255,255,.5);
+  1px solid rgba(16,185,129,.18);
 
-  border-radius:26px;
+  color:#a7f3d0;
 
-  display:grid;
+  padding:6px 12px;
 
-  grid-template-columns:
-  repeat(4,1fr);
+  border-radius:999px;
 
-  padding:10px 0;
-
-  box-shadow:
-  0 16px 36px rgba(0,0,0,.12);
-
-  z-index:999;
-
-}
-
-.nav-btn{
-
-  border:none;
-  background:none;
-
-  display:flex;
-  flex-direction:column;
-
-  align-items:center;
-
-  gap:5px;
-
-  color:#6b7280;
-
-  font-size:11px;
-
-  cursor:pointer;
-
-}
-
-.nav-btn.active{
-
-  color:var(--main);
-
-  font-weight:700;
-
-}
-
-.nav-btn i{
-
-  font-size:21px;
-
-}
-
-/****************************************
- PRINT
-****************************************/
-
-@media print{
-
-  body *{
-    visibility:hidden;
-  }
-
-  #printArea,
-  #printArea *{
-    visibility:visible;
-  }
-
-  #printArea{
-
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-
-  }
+  font-size:12px;
 
 }
 
 </style>
 
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header>
-
-  <div class="header-wrap">
-
-    <div class="logo-wrap">
-
-      <div class="logo">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-
-      <div>
-
-        <div class="header-title">
-          🇹🇭 BPP SMART WORKFLOW
-        </div>
-
-        <div class="header-sub">
-          ระบบติดตามแฟ้มงานอัจฉริยะ ตชด.
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="online-badge">
-      ● ONLINE
-    </div>
-
-  </div>
-
-</header>
-
-<!-- MAIN -->
-<main>
-
-  <!-- DASHBOARD -->
-  <section id="dashboard"
-  class="tab active">
-
-    <!-- STATS -->
-    <div class="stats-grid">
-
-      <div class="stat-card blue">
-
-        <div class="stat-title">
-          📥 หน้าห้อง ผกก.
-        </div>
-
-        <div class="stat-value"
-        id="count1">
-          0
-        </div>
-
-      </div>
-
-      <div class="stat-card green">
-
-        <div class="stat-title">
-          📤 หน้าห้อง ผบก.
-        </div>
-
-        <div class="stat-value"
-        id="count2">
-          0
-        </div>
-
-      </div>
-
-      <div class="stat-card red">
-
-        <div class="stat-title">
-          ❌ ตีกลับ
-        </div>
-
-        <div class="stat-value"
-        id="countReject">
-          0
-        </div>
-
-      </div>
-
-      <div class="stat-card gold">
-
-        <div class="stat-title">
-          📁 ทั้งหมด
-        </div>
-
-        <div class="stat-value"
-        id="countTotal">
-          0
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- TIMELINE -->
-    <div class="card"
-    style="margin-top:18px;">
-
-      <div style="
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:16px;">
-
-        📜 Timeline ล่าสุด
-
-      </div>
-
-      <input
-      id="searchInput"
-      class="search"
-      placeholder="ค้นหาแฟ้ม...">
-
-      <div
-      id="timeline"
-      style="margin-top:24px;">
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SCAN -->
-  <section id="scan"
-  class="tab">
-
-    <div class="card">
-
-      <div style="
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:16px;">
-
-        📷 สแกนปกแฟ้ม
-
-      </div>
-
-      <div id="reader"></div>
-
-      <button
-      class="main-btn btn-main"
-      style="margin-top:18px;"
-      onclick="startScanner()">
-
-        เปิดกล้องสแกน QR
-
-      </button>
-
-    </div>
-
-  </section>
-
-  <!-- REGISTER -->
-  <section id="register"
-  class="tab">
-
-    <div class="card">
-
-      <div style="
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:18px;">
-
-        📁 ขึ้นทะเบียนแฟ้มใหม่
-
-      </div>
-
-      <div style="
-      display:flex;
-      flex-direction:column;
-      gap:14px;">
-
-        <input
-        id="folderId"
-        class="input"
-        placeholder="Folder ID">
-
-        <input
-        id="title"
-        class="input"
-        placeholder="ชื่อเรื่อง">
-
-        <input
-        id="owner"
-        class="input"
-        placeholder="เจ้าของเรื่อง">
-
-        <select
-        id="priority"
-        class="input">
-
-          <option>
-            🔴 ด่วนที่สุด
-          </option>
-
-          <option>
-            🟠 ด่วน
-          </option>
-
-          <option selected>
-            🟡 ปกติ
-          </option>
-
-          <option>
-            🟢 ต่ำ
-          </option>
-
-        </select>
-
-        <select
-        id="security"
-        class="input">
-
-          <option>
-            🔓 ปกติ
-          </option>
-
-          <option>
-            🔒 ลับ
-          </option>
-
-          <option>
-            🔐 ลับมาก
-          </option>
-
-          <option>
-            ☢️ ลับที่สุด
-          </option>
-
-        </select>
-
-        <button
-        class="main-btn btn-main"
-        onclick="registerFolder()">
-
-          🚀 สร้างแฟ้ม + QR
-
-        </button>
-
-      </div>
-
-    </div>
-
-    <!-- QR -->
-    <div
-    id="qrBox"
-    class="card qr-box"
-    style="
-    margin-top:18px;
-    display:none;">
-
-      <div id="printArea"
-      style="
-      text-align:center;">
-
-        <div class="qr-badge">
-          🇹🇭 ตำรวจตระเวนชายแดน
-        </div>
-
-        <div id="qrcode"
-        style="
-        display:flex;
-        justify-content:center;
-        margin-top:18px;">
-        </div>
-
-        <div
-        id="qrId"
-        style="
-        font-size:24px;
-        font-weight:700;
-        margin-top:16px;">
-        </div>
-
-        <div
-        id="qrTitle"
-        style="
-        margin-top:10px;
-        color:#4b5563;">
-        </div>
-
-      </div>
-
-      <button
-      class="main-btn btn-main"
-      style="margin-top:20px;"
-      onclick="window.print()">
-
-        🖨️ พิมพ์ป้ายคุมแฟ้ม
-
-      </button>
-
-    </div>
-
-  </section>
-
-  <!-- UPDATE -->
-  <section id="update"
-  class="tab">
-
-    <div class="card">
-
-      <div
-      id="updateId"
-      style="
-      font-size:24px;
-      font-weight:700;">
-      </div>
-
-      <div
-      id="updateTitle"
-      style="
-      margin-top:5px;
-      color:#6b7280;">
-      </div>
-
-      <div style="
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:16px;">
-
-        <div
-        id="priorityBadge"
-        class="badge badge-red">
-        </div>
-
-        <div
-        id="securityBadge"
-        class="badge badge-blue">
-        </div>
-
-      </div>
-
-      <!-- WORKFLOW -->
-      <div style="
-      margin-top:22px;
-      display:flex;
-      flex-direction:column;
-      gap:14px;">
-
-        <button
-        class="workflow-btn"
-        style="
-        background:#dbeafe;"
-        onclick="selectWorkflow(
-        'PHASE_1',
-        '📥 จนท.หน้าห้อง ผกก. รับเรื่อง → ผ่าน ผกก.'
-        )">
-
-          <div class="workflow-title">
-            📥 หน้าห้อง ผกก.
-          </div>
-
-          <div class="workflow-sub">
-            รับเรื่อง / ผ่าน ผกก.
-          </div>
-
-        </button>
-
-        <button
-        class="workflow-btn"
-        style="
-        background:#dcfce7;"
-        onclick="selectWorkflow(
-        'PHASE_2',
-        '📤 จนท.หน้าห้อง ผบก. รับเรื่อง → ผ่าน ผบก.'
-        )">
-
-          <div class="workflow-title">
-            📤 หน้าห้อง ผบก.
-          </div>
-
-          <div class="workflow-sub">
-            รับเรื่อง / ผ่าน ผบก.
-          </div>
-
-        </button>
-
-        <button
-        class="workflow-btn"
-        style="
-        background:#fee2e2;"
-        onclick="selectWorkflow(
-        'REJECT',
-        '❌ ตีกลับแก้ไขเอกสาร'
-        )">
-
-          <div class="workflow-title">
-            ❌ ตีกลับแก้ไข
-          </div>
-
-          <div class="workflow-sub">
-            เอกสารไม่สมบูรณ์
-          </div>
-
-        </button>
-
-      </div>
-
-      <input
-      id="reporter"
-      class="input"
-      style="margin-top:18px;"
-      placeholder="ยศ-ชื่อ ผู้รายงาน">
-
-      <textarea
-      id="remark"
-      class="input"
-      style="
-      margin-top:14px;
-      min-height:120px;"
-      placeholder="หมายเหตุ / ข้อสั่งการ">
-      </textarea>
-
-      <button
-      class="main-btn btn-main"
-      style="margin-top:20px;"
-      onclick="submitUpdate()">
-
-        🚀 บันทึกสถานะ
-
-      </button>
-
-    </div>
-
-  </section>
-
-</main>
-
-<!-- NAV -->
-<nav class="bottom-nav">
-
-  <button
-  class="nav-btn active"
-  onclick="showTab('dashboard',this)">
-
-    <i class="fa-solid fa-chart-column"></i>
-    <span>แดชบอร์ด</span>
-
-  </button>
-
-  <button
-  class="nav-btn"
-  onclick="showTab('scan',this)">
-
-    <i class="fa-solid fa-qrcode"></i>
-    <span>สแกน</span>
-
-  </button>
-
-  <button
-  class="nav-btn"
-  onclick="showTab('register',this)">
-
-    <i class="fa-solid fa-folder-plus"></i>
-    <span>ขึ้นเล่ม</span>
-
-  </button>
-
-  <button
-  class="nav-btn"
-  onclick="showTab('update',this)">
-
-    <i class="fa-solid fa-location-dot"></i>
-    <span>อัปเดต</span>
-
-  </button>
-
-</nav>
+<!-- =========================================
+4. HEADER STATUS ONLINE
+วางด้านขวา Header
+========================================= -->
+
+<div class="online-pill">
+  ● ONLINE
+</div>
+
+<!-- =========================================
+5. อัปเกรด Dashboard Card
+========================================= -->
+
+<!-- เดิม -->
+<div class="bg-white p-4 rounded-xl shadow-sm">
+
+<!-- เปลี่ยนเป็น -->
+<div class="
+glass-card
+p-5
+rounded-2xl
+">
+
+<!-- =========================================
+6. อัปเกรด Status Card
+========================================= -->
+
+<div class="
+status-modern
+rounded-2xl
+overflow-hidden
+">
+
+<!-- =========================================
+7. อัปเกรด TABLE
+========================================= -->
+
+<thead class="
+bg-gradient-to-r
+from-[#143f24]
+to-[#205e36]
+text-white
+">
+
+<!-- =========================================
+8. เพิ่ม Hover Table Row
+========================================= -->
+
+<tr class="timeline-hover">
+
+<!-- =========================================
+9. อัปเกรด Search Box
+========================================= -->
+
+<input
+class="
+w-full
+bg-[#f3f4f6]
+rounded-2xl
+px-4
+py-3
+outline-none
+focus:ring-4
+focus:ring-[#143f24]/10
+">
+
+<!-- =========================================
+10. อัปเกรด Bottom Nav
+========================================= -->
+
+<nav class="
+fixed
+bottom-3
+left-3
+right-3
+nav-glass
+rounded-2xl
+py-2
+z-50
+">
+
+<!-- =========================================
+11. อัปเกรด NAV BUTTON
+========================================= -->
+
+<button class="
+flex
+flex-col
+items-center
+justify-center
+gap-1
+text-xs
+transition-all
+duration-200
+active:scale-95
+">
+
+<!-- =========================================
+12. อัปเกรด QR CARD
+========================================= -->
+
+<div id="qrBox"
+class="
+glass-card
+qr-premium
+rounded-2xl
+p-5
+mt-4
+hidden
+">
+
+<!-- =========================================
+13. อัปเกรด BUTTON หลัก
+========================================= -->
+
+<button class="
+w-full
+bg-gradient-to-r
+from-[#143f24]
+to-[#1d5734]
+text-white
+font-bold
+py-4
+rounded-2xl
+shadow-lg
+hover:shadow-2xl
+active:scale-95
+transition-all
+duration-200
+">
+
+<!-- =========================================
+14. อัปเกรด Workflow Button
+========================================= -->
+
+<button class="
+status-modern
+w-full
+border
+p-4
+rounded-2xl
+text-left
+">
+
+<!-- =========================================
+15. เพิ่ม Animation โหลดระบบ
+========================================= -->
 
 <script>
 
-let WEBAPP =
-localStorage.getItem("BPP_WEBAPP")
-|| "";
+window.addEventListener(
+"load",
+()=>{
 
-let currentFolder="";
-let currentStatusCode="";
-let currentStatusTitle="";
-
-function showTab(id,btn=null){
-
-  document
-  .querySelectorAll(".tab")
-  .forEach(t=>{
-    t.classList.remove("active");
+  document.body.animate(
+  [
+    {
+      opacity:0,
+      transform:"translateY(10px)"
+    },
+    {
+      opacity:1,
+      transform:"translateY(0)"
+    }
+  ],
+  {
+    duration:350,
+    easing:"ease-out"
   });
 
-  document
-  .getElementById(id)
-  .classList.add("active");
-
-  document
-  .querySelectorAll(".nav-btn")
-  .forEach(b=>{
-    b.classList.remove("active");
-  });
-
-  if(btn){
-    btn.classList.add("active");
-  }
-
-}
+});
 
 </script>
 
-</body>
-</html>
+<!-- =========================================
+16. เพิ่ม Soft Shadow ให้ QR
+========================================= -->
+
+<style>
+
+#qrcode img{
+
+  border-radius:14px;
+
+  box-shadow:
+  0 12px 28px rgba(0,0,0,.15);
+
+}
+
+</style>
+
+<!-- =========================================
+17. อัปเกรด Timeline Item
+========================================= -->
+
+<div class="
+border-l-4
+border-[#143f24]
+pl-4
+py-2
+">
+
+<!-- =========================================
+18. เพิ่ม Gold Accent Title
+========================================= -->
+
+<h2 class="
+text-[#143f24]
+font-bold
+tracking-wide
+">
+
+<!-- =========================================
+19. เพิ่ม Premium Effect ให้ Header Logo
+========================================= -->
+
+<div class="
+w-14
+h-14
+rounded-2xl
+bg-gradient-to-br
+from-[#d6bc7d]
+to-[#c5a059]
+shadow-xl
+flex
+items-center
+justify-center
+">
+
+<!-- =========================================
+20. เพิ่ม CSS Mobile Smooth
+========================================= -->
+
+<style>
+
+html{
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior:smooth;
+}
+
+button{
+  user-select:none;
+}
+
+</style>

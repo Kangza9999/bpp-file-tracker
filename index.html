@@ -2,8 +2,8 @@
 <html lang="th">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>BPP Smart Workflow</title>
 
@@ -27,10 +27,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 :root{
 
   --main:#143f24;
-  --main-dark:#0d2817;
+  --main-dark:#0e2c19;
   --gold:#c5a059;
 
-  --bg:#eef2ef;
+  --bg:#edf2ee;
 
   --blue:#2563eb;
   --green:#16a34a;
@@ -40,38 +40,69 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 *{
+
   font-family:'Sarabun',sans-serif;
+
+  transition:
+  background .2s ease,
+  box-shadow .2s ease,
+  transform .15s ease;
+
 }
 
 body{
-  background:var(--bg);
+
   margin:0;
   padding:0;
+
+  background:
+  linear-gradient(
+    180deg,
+    #edf2ee 0%,
+    #e6ece8 100%
+  );
+
+  color:#111827;
+
 }
 
 /****************************************
  HEADER
 ****************************************/
 
-.topbar{
+header{
 
   background:
   linear-gradient(
     135deg,
+    var(--main-dark),
     var(--main),
-    var(--main-dark)
+    #1d5734
   );
 
   color:white;
 
-  padding:18px;
+  padding:18px 20px;
+
+  border-bottom:
+  3px solid var(--gold);
 
   box-shadow:
-  0 4px 20px rgba(0,0,0,.15);
+  0 8px 24px rgba(0,0,0,.18);
 
   position:sticky;
   top:0;
   z-index:100;
+
+  backdrop-filter:blur(10px);
+
+}
+
+.header-wrap{
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
 }
 
@@ -83,18 +114,18 @@ body{
 
 }
 
-.logo-icon{
+.logo{
 
-  width:52px;
-  height:52px;
+  width:56px;
+  height:56px;
 
-  border-radius:16px;
+  border-radius:18px;
 
   background:
   linear-gradient(
     135deg,
-    var(--gold),
-    #e5c989
+    #d8bb74,
+    var(--gold)
   );
 
   display:flex;
@@ -103,24 +134,87 @@ body{
 
   color:black;
 
-  font-size:22px;
+  font-size:24px;
 
   box-shadow:
-  0 4px 12px rgba(0,0,0,.25);
+  0 8px 18px rgba(0,0,0,.25);
 
 }
 
-.title-main{
+.header-title{
 
   font-size:20px;
   font-weight:700;
 
 }
 
-.title-sub{
+.header-sub{
 
   font-size:12px;
-  opacity:.8;
+  opacity:.85;
+
+  margin-top:3px;
+
+}
+
+.online-badge{
+
+  font-size:12px;
+
+  background:
+  rgba(16,185,129,.15);
+
+  border:
+  1px solid rgba(16,185,129,.25);
+
+  padding:7px 12px;
+
+  border-radius:999px;
+
+  color:#86efac;
+
+  backdrop-filter:blur(10px);
+
+}
+
+/****************************************
+ MAIN
+****************************************/
+
+main{
+
+  padding:16px;
+  padding-bottom:110px;
+
+}
+
+/****************************************
+ CARD
+****************************************/
+
+.card{
+
+  background:
+  rgba(255,255,255,.95);
+
+  backdrop-filter:blur(14px);
+
+  border:
+  1px solid rgba(255,255,255,.5);
+
+  border-radius:24px;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.06);
+
+  padding:18px;
+
+}
+
+.card:hover{
+
+  box-shadow:
+  0 16px 34px rgba(0,0,0,.09);
 
 }
 
@@ -134,23 +228,6 @@ body{
 
 .tab.active{
   display:block;
-}
-
-/****************************************
- CARD
-****************************************/
-
-.card{
-
-  background:white;
-
-  border-radius:24px;
-
-  box-shadow:
-  0 6px 24px rgba(0,0,0,.06);
-
-  padding:18px;
-
 }
 
 /****************************************
@@ -188,16 +265,16 @@ body{
 
   position:absolute;
 
-  width:100px;
-  height:100px;
+  width:120px;
+  height:120px;
 
   border-radius:50%;
 
   background:
   rgba(255,255,255,.12);
 
-  right:-30px;
-  top:-30px;
+  top:-40px;
+  right:-40px;
 
 }
 
@@ -218,118 +295,77 @@ body{
 }
 
 .blue{
-  background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+  background:
+  linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
 }
 
 .green{
-  background:linear-gradient(135deg,#16a34a,#15803d);
+
+  background:
+  linear-gradient(
+    135deg,
+    #16a34a,
+    #15803d
+  );
+
 }
 
 .red{
-  background:linear-gradient(135deg,#dc2626,#b91c1c);
+
+  background:
+  linear-gradient(
+    135deg,
+    #dc2626,
+    #b91c1c
+  );
+
 }
 
 .gold{
-  background:linear-gradient(135deg,#c5a059,#a67c2e);
+
+  background:
+  linear-gradient(
+    135deg,
+    #c5a059,
+    #a87f2e
+  );
+
 }
 
 /****************************************
- SEARCH
+ INPUT
 ****************************************/
 
-.search-box{
+.input{
 
   width:100%;
 
+  background:#f4f6f5;
+
   border:none;
 
-  background:#f3f4f6;
+  border-radius:18px;
 
-  border-radius:16px;
-
-  padding:14px 16px;
+  padding:15px;
 
   outline:none;
+
+  box-sizing:border-box;
 
   font-size:15px;
 
 }
 
-/****************************************
- TIMELINE
-****************************************/
+.input:focus{
 
-.timeline-item{
-
-  position:relative;
-
-  padding-left:28px;
-
-  margin-bottom:22px;
-
-}
-
-.timeline-item::before{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  top:5px;
-
-  width:14px;
-  height:14px;
-
-  border-radius:50%;
-
-  background:var(--main);
-
-}
-
-.timeline-item::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:6px;
-  top:18px;
-
-  width:2px;
-  height:calc(100% + 10px);
-
-  background:#d1d5db;
-
-}
-
-.timeline-item:last-child::after{
-  display:none;
-}
-
-.timeline-id{
-
-  font-weight:700;
-  color:#111827;
-
-}
-
-.timeline-status{
-
-  margin-top:4px;
-
-  font-size:14px;
-
-  color:#374151;
-
-}
-
-.timeline-time{
-
-  font-size:12px;
-  color:#6b7280;
-
-  margin-top:4px;
+  box-shadow:
+  0 0 0 3px rgba(20,63,36,.15);
 
 }
 
@@ -347,12 +383,9 @@ body{
 
   padding:16px;
 
-  font-size:16px;
   font-weight:700;
 
   cursor:pointer;
-
-  transition:.2s;
 
 }
 
@@ -371,49 +404,154 @@ body{
 
   color:white;
 
+  box-shadow:
+  0 10px 24px rgba(20,63,36,.25);
+
 }
 
+.btn-main:hover{
+
+  filter:brightness(1.05);
+
+}
+
+/****************************************
+ WORKFLOW
+****************************************/
+
 .workflow-btn{
+
+  width:100%;
+
+  border:none;
 
   border-radius:22px;
 
   padding:18px;
 
-  border:none;
-
-  width:100%;
-
   text-align:left;
 
   cursor:pointer;
 
-  transition:.2s;
+  border:
+  1px solid rgba(255,255,255,.5);
+
+}
+
+.workflow-btn:hover{
+
+  transform:translateY(-2px);
 
 }
 
 .workflow-btn:active{
+
   transform:scale(.98);
+
 }
 
 .workflow-title{
+
   font-weight:700;
+
 }
 
 .workflow-sub{
 
   font-size:12px;
 
-  opacity:.7;
+  opacity:.75;
 
   margin-top:5px;
 
 }
 
 /****************************************
- INPUT
+ TIMELINE
 ****************************************/
 
-.input{
+.timeline-item{
+
+  position:relative;
+
+  padding-left:28px;
+
+  margin-bottom:24px;
+
+}
+
+.timeline-item::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:6px;
+
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  background:var(--main);
+
+  box-shadow:
+  0 0 0 4px rgba(20,63,36,.12);
+
+}
+
+.timeline-item::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:6px;
+  top:22px;
+
+  width:2px;
+  height:calc(100% + 8px);
+
+  background:#d1d5db;
+
+}
+
+.timeline-item:last-child::after{
+  display:none;
+}
+
+.timeline-id{
+
+  font-weight:700;
+
+}
+
+.timeline-status{
+
+  margin-top:4px;
+
+  font-size:14px;
+
+  color:#374151;
+
+}
+
+.timeline-time{
+
+  font-size:12px;
+
+  color:#6b7280;
+
+  margin-top:5px;
+
+}
+
+/****************************************
+ SEARCH
+****************************************/
+
+.search{
 
   width:100%;
 
@@ -423,25 +561,43 @@ body{
 
   border-radius:18px;
 
-  padding:15px;
+  padding:14px 16px;
 
   outline:none;
-
-  box-sizing:border-box;
-
-  font-size:15px;
 
 }
 
 /****************************************
- QR BOX
+ QR
 ****************************************/
 
-.qr-card{
+.qr-box{
 
-  text-align:center;
+  border:
+  3px dashed var(--main);
 
-  border:3px dashed var(--main);
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+.qr-box::before{
+
+  content:"BPP";
+
+  position:absolute;
+
+  font-size:120px;
+
+  font-weight:900;
+
+  opacity:.03;
+
+  top:20px;
+  left:50%;
+
+  transform:translateX(-50%);
 
 }
 
@@ -459,7 +615,37 @@ body{
 
   font-size:12px;
 
-  margin-bottom:15px;
+}
+
+/****************************************
+ BADGE
+****************************************/
+
+.badge{
+
+  display:inline-block;
+
+  padding:7px 14px;
+
+  border-radius:999px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+}
+
+.badge-red{
+
+  background:#fee2e2;
+  color:#b91c1c;
+
+}
+
+.badge-blue{
+
+  background:#dbeafe;
+  color:#1d4ed8;
 
 }
 
@@ -471,11 +657,19 @@ body{
 
   position:fixed;
 
-  bottom:0;
-  left:0;
-  right:0;
+  left:14px;
+  right:14px;
+  bottom:14px;
 
-  background:white;
+  background:
+  rgba(255,255,255,.95);
+
+  backdrop-filter:blur(16px);
+
+  border:
+  1px solid rgba(255,255,255,.5);
+
+  border-radius:26px;
 
   display:grid;
 
@@ -484,13 +678,10 @@ body{
 
   padding:10px 0;
 
-  border-top:
-  1px solid #ddd;
+  box-shadow:
+  0 16px 36px rgba(0,0,0,.12);
 
   z-index:999;
-
-  box-shadow:
-  0 -4px 16px rgba(0,0,0,.08);
 
 }
 
@@ -510,6 +701,8 @@ body{
 
   font-size:11px;
 
+  cursor:pointer;
+
 }
 
 .nav-btn.active{
@@ -522,46 +715,8 @@ body{
 
 .nav-btn i{
 
-  font-size:20px;
+  font-size:21px;
 
-}
-
-/****************************************
- BADGE
-****************************************/
-
-.badge{
-
-  display:inline-block;
-
-  padding:6px 12px;
-
-  border-radius:999px;
-
-  font-size:12px;
-
-  font-weight:700;
-
-}
-
-.badge-red{
-  background:#fee2e2;
-  color:#b91c1c;
-}
-
-.badge-green{
-  background:#dcfce7;
-  color:#166534;
-}
-
-.badge-blue{
-  background:#dbeafe;
-  color:#1d4ed8;
-}
-
-.badge-gold{
-  background:#fef3c7;
-  color:#92400e;
 }
 
 /****************************************
@@ -597,32 +752,40 @@ body{
 <body>
 
 <!-- HEADER -->
-<div class="topbar">
+<header>
 
-  <div class="logo-wrap">
+  <div class="header-wrap">
 
-    <div class="logo-icon">
-      <i class="fa-solid fa-shield-halved"></i>
+    <div class="logo-wrap">
+
+      <div class="logo">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+
+      <div>
+
+        <div class="header-title">
+          🇹🇭 BPP SMART WORKFLOW
+        </div>
+
+        <div class="header-sub">
+          ระบบติดตามแฟ้มงานอัจฉริยะ ตชด.
+        </div>
+
+      </div>
+
     </div>
 
-    <div>
-
-      <div class="title-main">
-        🇹🇭 BPP SMART WORKFLOW
-      </div>
-
-      <div class="title-sub">
-        ระบบติดตามแฟ้มงานอัจฉริยะ ตชด.
-      </div>
-
+    <div class="online-badge">
+      ● ONLINE
     </div>
 
   </div>
 
-</div>
+</header>
 
 <!-- MAIN -->
-<div style="padding:16px;padding-bottom:100px;">
+<main>
 
   <!-- DASHBOARD -->
   <section id="dashboard"
@@ -690,31 +853,22 @@ body{
     style="margin-top:18px;">
 
       <div style="
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      font-size:18px;
+      font-weight:700;
       margin-bottom:16px;">
 
-        <div style="
-        font-weight:700;
-        font-size:18px;">
-
-          📜 Timeline ล่าสุด
-
-        </div>
+        📜 Timeline ล่าสุด
 
       </div>
 
       <input
-      type="text"
-      class="search-box"
-      placeholder="ค้นหาแฟ้ม..."
-      id="searchInput">
+      id="searchInput"
+      class="search"
+      placeholder="ค้นหาแฟ้ม...">
 
       <div
       id="timeline"
-      style="margin-top:22px;">
-
+      style="margin-top:24px;">
       </div>
 
     </div>
@@ -772,23 +926,23 @@ body{
       gap:14px;">
 
         <input
-        class="input"
         id="folderId"
+        class="input"
         placeholder="Folder ID">
 
         <input
-        class="input"
         id="title"
+        class="input"
         placeholder="ชื่อเรื่อง">
 
         <input
-        class="input"
         id="owner"
+        class="input"
         placeholder="เจ้าของเรื่อง">
 
         <select
-        class="input"
-        id="priority">
+        id="priority"
+        class="input">
 
           <option>
             🔴 ด่วนที่สุด
@@ -809,8 +963,8 @@ body{
         </select>
 
         <select
-        class="input"
-        id="security">
+        id="security"
+        class="input">
 
           <option>
             🔓 ปกติ
@@ -845,11 +999,14 @@ body{
     <!-- QR -->
     <div
     id="qrBox"
-    class="card qr-card"
-    style="margin-top:18px;
+    class="card qr-box"
+    style="
+    margin-top:18px;
     display:none;">
 
-      <div id="printArea">
+      <div id="printArea"
+      style="
+      text-align:center;">
 
         <div class="qr-badge">
           🇹🇭 ตำรวจตระเวนชายแดน
@@ -859,15 +1016,15 @@ body{
         style="
         display:flex;
         justify-content:center;
-        margin-top:10px;">
+        margin-top:18px;">
         </div>
 
         <div
         id="qrId"
         style="
-        font-size:22px;
+        font-size:24px;
         font-weight:700;
-        margin-top:14px;">
+        margin-top:16px;">
         </div>
 
         <div
@@ -884,7 +1041,7 @@ body{
       style="margin-top:20px;"
       onclick="window.print()">
 
-        🖨️ พิมพ์ป้ายแฟ้ม
+        🖨️ พิมพ์ป้ายคุมแฟ้ม
 
       </button>
 
@@ -908,15 +1065,15 @@ body{
       <div
       id="updateTitle"
       style="
-      color:#6b7280;
-      margin-top:6px;">
+      margin-top:5px;
+      color:#6b7280;">
       </div>
 
       <div style="
-      margin-top:14px;
       display:flex;
       gap:8px;
-      flex-wrap:wrap;">
+      flex-wrap:wrap;
+      margin-top:16px;">
 
         <div
         id="priorityBadge"
@@ -1024,10 +1181,10 @@ body{
 
   </section>
 
-</div>
+</main>
 
 <!-- NAV -->
-<div class="bottom-nav">
+<nav class="bottom-nav">
 
   <button
   class="nav-btn active"
@@ -1065,7 +1222,7 @@ body{
 
   </button>
 
-</div>
+</nav>
 
 <script>
 
@@ -1100,333 +1257,6 @@ function showTab(id,btn=null){
   }
 
 }
-
-function registerFolder(){
-
-  const folderId =
-  document.getElementById("folderId")
-  .value;
-
-  const title =
-  document.getElementById("title")
-  .value;
-
-  const owner =
-  document.getElementById("owner")
-  .value;
-
-  const priority =
-  document.getElementById("priority")
-  .value;
-
-  const securityLevel =
-  document.getElementById("security")
-  .value;
-
-  fetch(WEBAPP,{
-
-    method:"POST",
-
-    headers:{
-      "Content-Type":"application/json"
-    },
-
-    body:JSON.stringify({
-
-      action:"register",
-
-      folderId,
-      title,
-      owner,
-      priority,
-      securityLevel
-
-    })
-
-  })
-  .then(r=>r.json())
-  .then(res=>{
-
-    if(res.success){
-
-      createQR(folderId,title);
-
-      alert("สร้างแฟ้มสำเร็จ");
-
-      loadTimeline();
-
-    }else{
-
-      alert(res.message);
-
-    }
-
-  });
-
-}
-
-function createQR(id,title){
-
-  document
-  .getElementById("qrBox")
-  .style.display="block";
-
-  document
-  .getElementById("qrId")
-  .innerText=id;
-
-  document
-  .getElementById("qrTitle")
-  .innerText=title;
-
-  document
-  .getElementById("qrcode")
-  .innerHTML="";
-
-  const url =
-  location.origin +
-  location.pathname +
-  "?id=" + id;
-
-  new QRCode(
-    document.getElementById("qrcode"),
-    {
-      text:url,
-      width:180,
-      height:180
-    }
-  );
-
-}
-
-function startScanner(){
-
-  const html5QrCode =
-  new Html5Qrcode("reader");
-
-  html5QrCode.start(
-
-    { facingMode:"environment" },
-
-    {
-      fps:15,
-      qrbox:{
-        width:250,
-        height:250
-      }
-    },
-
-    (decodedText)=>{
-
-      let id="";
-
-      if(decodedText.includes("?id=")){
-
-        id =
-        new URL(decodedText)
-        .searchParams.get("id");
-
-      }
-
-      openUpdate(id);
-
-      html5QrCode.stop();
-
-    }
-
-  );
-
-}
-
-function openUpdate(id){
-
-  currentFolder=id;
-
-  showTab("update");
-
-  document
-  .getElementById("updateId")
-  .innerText=id;
-
-  fetch(
-    WEBAPP +
-    "?action=getFolder&folderId=" +
-    id
-  )
-  .then(r=>r.json())
-  .then(data=>{
-
-    document
-    .getElementById("updateTitle")
-    .innerText=data.title;
-
-    document
-    .getElementById("priorityBadge")
-    .innerText=data.priority;
-
-    document
-    .getElementById("securityBadge")
-    .innerText=data.securityLevel;
-
-  });
-
-}
-
-function selectWorkflow(code,title){
-
-  currentStatusCode=code;
-  currentStatusTitle=title;
-
-  alert("เลือกสถานะแล้ว");
-
-}
-
-function submitUpdate(){
-
-  const reporter =
-  document.getElementById("reporter")
-  .value;
-
-  const remark =
-  document.getElementById("remark")
-  .value;
-
-  fetch(WEBAPP,{
-
-    method:"POST",
-
-    headers:{
-      "Content-Type":"application/json"
-    },
-
-    body:JSON.stringify({
-
-      action:"updateStatus",
-
-      folderId:currentFolder,
-
-      statusCode:
-      currentStatusCode,
-
-      statusTitle:
-      currentStatusTitle,
-
-      officer:reporter,
-
-      remark:remark,
-
-      priority:
-      document
-      .getElementById("priorityBadge")
-      .innerText,
-
-      securityLevel:
-      document
-      .getElementById("securityBadge")
-      .innerText
-
-    })
-
-  })
-  .then(r=>r.json())
-  .then(()=>{
-
-    alert("อัปเดตสำเร็จ");
-
-    loadTimeline();
-
-    showTab("dashboard");
-
-  });
-
-}
-
-function loadTimeline(){
-
-  fetch(
-    WEBAPP +
-    "?action=getRecent"
-  )
-  .then(r=>r.json())
-  .then(data=>{
-
-    let html="";
-
-    let c1=0;
-    let c2=0;
-    let cr=0;
-
-    data.forEach(item=>{
-
-      if(item[3]==="PHASE_1") c1++;
-      if(item[3]==="PHASE_2") c2++;
-      if(item[3]==="REJECT") cr++;
-
-      html += `
-
-      <div class="timeline-item">
-
-        <div class="timeline-id">
-          ${item[1]}
-        </div>
-
-        <div class="timeline-status">
-          ${item[4]}
-        </div>
-
-        <div class="timeline-time">
-          🕒 ${item[0]}
-        </div>
-
-      </div>
-
-      `;
-
-    });
-
-    document
-    .getElementById("timeline")
-    .innerHTML=html;
-
-    document
-    .getElementById("count1")
-    .innerText=c1;
-
-    document
-    .getElementById("count2")
-    .innerText=c2;
-
-    document
-    .getElementById("countReject")
-    .innerText=cr;
-
-    document
-    .getElementById("countTotal")
-    .innerText=data.length;
-
-  });
-
-}
-
-window.onload=()=>{
-
-  const params =
-  new URLSearchParams(
-    location.search
-  );
-
-  const id =
-  params.get("id");
-
-  if(id){
-
-    openUpdate(id);
-
-  }
-
-  loadTimeline();
-
-};
 
 </script>
 
